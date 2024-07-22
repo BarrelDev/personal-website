@@ -11,10 +11,10 @@ const About = () => {
           <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
             <div className="col-lg-6">
               <p className="fw-light text-white text-body-light text-wrap fs-5 ">
-                A high school junior with a passion for computer science.
-                Looking forward to help people using technology. I am love Game
-                development, Programming Robots. The areas that I am interested
-                and focusing are AI/ML and Human computer Interaction.
+                A high school senior with a passion for computer science.
+                Looking forward to helping people using technology. I am love Game
+                development, programming robots. The areas that I am interested
+                and focusing are AI/ML and Robotics.
               </p>
               <h3 className="display-5 fw-bold text-white text-body-light fs-4 lh-1 mb-3 text-capitalized">
                 Game Developer & Robot Automation.

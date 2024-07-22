@@ -2,6 +2,10 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
+import Portfolio from "./components/Portfolio";
+import Footer from "./components/Footer";
+
+
 
 function App() {
   return (
@@ -10,8 +14,9 @@ function App() {
       <div className="bg-black bg-gradient" style={{ paddingTop: "10vh" }}>
         <Hero />
         <About />
-        <Skills/>
-        <h2 id="portfolio">portfolio</h2>
+        <Skills />
+        <Portfolio />
+        <Footer />
       </div>
     </>
   );

@@ -37,10 +37,10 @@ const Hero = () => {
                   <li className="list-group-item ">
                     <SocialIcon url="https://www.linkedin.com/in/visvam/" />
                   </li>
-                  <li className="list-group-item  ">
+                  <li className="list-group-item">
                     <SocialIcon url="https://github.com/BarrelDev/" />
                   </li>
-                  <li className="list-group-item  ">
+                  <li className="list-group-item">
                     <SocialIcon url="mailto:visvamrajesh@outlook.com" />
                   </li>
                 </ul>

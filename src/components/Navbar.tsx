@@ -1,10 +1,5 @@
 import logo from "../assets/images/vr-logo-transparent.png";
 
-const goToHome = () => window.location.replace("./#home");
-const goToAbout = () => window.location.replace("./#about");
-const goToSkills = () => window.location.replace("./#skills");
-const goToPortfolio = () => window.location.replace("./#portfolio");
-
 const Navbar = () => {
   return (
     <>
@@ -18,24 +13,23 @@ const Navbar = () => {
               <a
                 className="nav-link"
                 aria-current="page"
-                href="#"
-                onClick={goToHome}
+                href="#home"
               >
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" onClick={goToAbout}>
+              <a className="nav-link" href="#about">
                 About
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" onClick={goToSkills}>
+              <a className="nav-link" href="#skills">
                 Skills
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" onClick={goToPortfolio}>
+              <a className="nav-link" href="#portfolio" >
                 Portfolio
               </a>
             </li>
