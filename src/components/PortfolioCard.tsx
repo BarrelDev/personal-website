@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 
-import AOS from 'aos';
+import AOS from "aos";
 import "aos/dist/aos.css";
+import "./PortfolioCard.css";
 
 interface PortfolioCardProps {
   img: string;
@@ -20,8 +21,8 @@ const PortfolioCard = ({
     AOS.init();
   }, []);
   return (
-    <div className="card rounded-5" data-aos="fade-up">
-      <a href={url} target="_blank">
+    <div className="card rounded-5 zoom" data-aos="fade-up">
+      <a href={url} role="button" target="_blank">
         <img
           src={img}
           className="mx-lg-auto img-fluid rounded-5 card-img"

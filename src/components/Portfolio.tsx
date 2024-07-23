@@ -28,10 +28,20 @@ const Portfolio = () => {
               />
             </div>
             <div className="col-md-4">
-              <PortfolioCard name="Python" img={logo} url="" />
+              <PortfolioCard
+                name="ReactGraphDisplay"
+                description=""
+                img={logo}
+                url="https://github.com/BarrelDev/ReactGraphDisplay"
+              />
             </div>
             <div className="col-md-4">
-              <PortfolioCard name="TypeScript" img={logo} url="" />
+              <PortfolioCard
+                name="Random Potion Mod"
+                description=""
+                img={logo}
+                url="https://github.com/BarrelDev/Random-Potion-Mod"
+              />
             </div>
           </div>
           <div className="row flex-lg-row align-items-center g-5 py-5">

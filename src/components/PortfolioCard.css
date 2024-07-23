@@ -1,0 +1,7 @@
+.zoom {
+    transition: transform ease 2s;
+}
+
+.zoom :hover {
+    transform: scale(1.05);
+}
