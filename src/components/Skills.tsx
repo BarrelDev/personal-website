@@ -1,10 +1,18 @@
 import SkillBar from "./SkillBar";
+import { useEffect } from "react";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Skills = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
       <div className="container-fluid bg-success-subtle" id="skills">
-        <div className="container mt-3 pt-5 pb-3">
+        <div className="container mt-3 pt-5 pb-3" data-aos="fade-up">
           <h1 className="text-center fw-bold fs-1">Skills</h1>
         </div>
         <div className="container col-xxl-8 px-4 py-1">

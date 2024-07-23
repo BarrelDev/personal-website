@@ -1,35 +1,44 @@
 import logo from "../assets/images/profile-img.jpg";
+import { useEffect } from "react";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const About = () => {
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
       <div className="container-fluid bg-primary-subtle" id="about">
-        <div className="container mt-3 pt-5 pb-3">
+        <div className="container mt-3 pt-5 pb-3" data-aos="fade-up">
           <h1 className="text-center fw-bold fs-1">About</h1>
         </div>
         <div className="container col-xxl-8 px-4 py-1">
           <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
             <div className="col-lg-6">
-              <p className="fw-light text-white text-body-light text-wrap fs-5 ">
+              <p className="fw-light text-white text-body-light text-wrap fs-5" data-aos="fade-up">
                 A high school senior with a passion for computer science.
                 Looking forward to helping people using technology. I am love Game
                 development, programming robots. The areas that I am interested
                 and focusing are AI/ML and Robotics.
               </p>
-              <h3 className="display-5 fw-bold text-white text-body-light fs-4 lh-1 mb-3 text-capitalized">
+              <h3 className="display-5 fw-bold text-white text-body-light fs-4 lh-1 mb-3 text-capitalized" data-aos="fade-up">
                 Game Developer & Robot Automation.
               </h3>
-              <p className="fw-light text-white text-body-light text-wrap fs-5">
+              <p className="fw-light text-white text-body-light text-wrap fs-5" data-aos="fade-up">
                 I am more focused in developing my knowledge in autonomous
                 coding for Robots. The Robots I programmed participated in FRC
                 competitions and reached the district level. I have developed
                 modules for custom features and interactions for the popular
                 voxel-based sandbox game, Minecraft.
               </p>
-              <h3 className="display-5 fw-bold text-white text-body-light fs-4 lh-1 mb-3 text-capitalized">
+              <h3 className="display-5 fw-bold text-white text-body-light fs-4 lh-1 mb-3 text-capitalized" data-aos="fade-up">
                 Mentoring Younger Kids.
               </h3>
-              <p className="fw-light text-white text-body-light text-wrap fs-5">
+              <p className="fw-light text-white text-body-light text-wrap fs-5" data-aos="fade-up">
                 Teaching others means teaching oneself first. It quite literally
                 forces one to become a master of any skill that he/she want to
                 teach someone else. I strongly believe in sharing knowledge will
@@ -37,7 +46,7 @@ const About = () => {
                 as Mentoring youngers in the field of robotics, programming.
               </p>
             </div>
-            <div className="col-10 col-sm-8 col-lg-6">
+            <div className="col-10 col-sm-8 col-lg-6" data-aos="fade-up">
               <img
                 src={logo}
                 className="d-block mx-lg-auto img-fluid border border-3 rounded-5 shadow"

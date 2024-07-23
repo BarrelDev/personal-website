@@ -1,3 +1,8 @@
+import { useEffect } from "react";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 interface SkillBarProps {
   name: string;
   progress: number;
@@ -6,8 +11,12 @@ interface SkillBarProps {
 const SkillBar = ({ name, progress }: SkillBarProps) => {
   let progressString: string = progress + "%";
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
-    <div className="container">
+    <div className="container" data-aos="fade-up">
       <h3>{name}</h3>
       <div
         className="progress"
