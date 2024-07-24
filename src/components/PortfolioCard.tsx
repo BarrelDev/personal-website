@@ -29,10 +29,10 @@ const PortfolioCard = ({
           alt={name}
           loading="lazy"
         ></img>
-        <div className="card-img-overlay">
-          <h3 className="text-center card-title">{name}</h3>
+        <div className="card-img-overlay text-light">
+          <h3 className="text-center card-title align-text-bottom">{name}</h3>
         </div>
-        <div className="card-img-overlay d-flex flex-column justify-content-end">
+        <div className="card-img-overlay text-light d-flex flex-column justify-content-end">
           <p className="text-center text-wrap align-text-bottom card-text">
             <small>{description}</small>
           </p>

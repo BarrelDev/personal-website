@@ -1,6 +1,7 @@
 import PortfolioCard from "./PortfolioCard";
 
 import logo from "../assets/images/vr-logo.png";
+import hopper from "../assets/images/Hopper.jpeg";
 
 import { useEffect } from "react";
 
@@ -23,7 +24,7 @@ const Portfolio = () => {
               <PortfolioCard
                 name="Hopper"
                 description="The codebase behind Team 3637's 2024 world championship robot, Dalek Floyd."
-                img={logo}
+                img={hopper}
                 url="https://github.com/FRC-3637-Daleks/Hopper"
               />
             </div>
