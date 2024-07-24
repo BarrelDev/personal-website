@@ -2,6 +2,13 @@ import PortfolioCard from "./PortfolioCard";
 
 import logo from "../assets/images/vr-logo.png";
 import hopper from "../assets/images/Hopper.jpeg";
+import gauss from "../assets/images/gauss.jpg";
+import potion_mod from "../assets/images/random-potion-mod.png";
+import cac from "../assets/images/Congressional-App-Challenge-Submission.png";
+import tilted from "../assets/images/tilted.png";
+
+import resume_link from "../assets/pdf/Resume-VisvamRajesh.pdf";
+import resume_img from "../assets/images/resume.jpg";
 
 import { useEffect } from "react";
 
@@ -40,31 +47,63 @@ const Portfolio = () => {
               <PortfolioCard
                 name="Random Potion Mod"
                 description=""
-                img={logo}
+                img={potion_mod}
                 url="https://github.com/BarrelDev/Random-Potion-Mod"
               />
             </div>
           </div>
           <div className="row flex-lg-row align-items-center g-5 py-5">
             <div className="col-md-4">
-              <PortfolioCard name="C#" img={logo} url="" />
+              <PortfolioCard
+                name="Gauss"
+                description="The codebase behind Team 3637's 2023 robot."
+                img={gauss}
+                url="https://github.com/FRC-3637-Daleks/Gauss"
+              />
             </div>
             <div className="col-md-4">
-              <PortfolioCard name="Java" img={logo} url="" />
+              <PortfolioCard
+                name="Pandemic Inc."
+                description="My submission for the 2020 Congressional App Challenge."
+                img={cac}
+                url="https://github.com/BarrelDev/CongressionalAppChallenge2020"
+              />
             </div>
             <div className="col-md-4">
-              <PortfolioCard name="Rust" img={logo} url="" />
+              <PortfolioCard
+                name="Food Game"
+                description="A WIP game about crafting food for customers, using Raylib."
+                img={logo}
+                url="https://github.com/BarrelDev/FoodGame"
+              />
             </div>
           </div>
           <div className="row flex-lg-row align-items-center g-5 py-5">
             <div className="col-md-4">
-              <PortfolioCard name="Git" img={logo} url="" />
+              <PortfolioCard
+                name="Youtube Scraper"
+                description="A youtube scraper that uses the Youtube Data API to get the latest videos from your subscription feed."
+                img={logo}
+                url="https://github.com/BarrelDev/youtubeScraper"
+              />
             </div>
             <div className="col-md-4">
-              <PortfolioCard name="Leadership" img={logo} url="" />
+              <PortfolioCard
+                name="Tilted"
+                description="An endless plaformer game made using Unity."
+                img={tilted}
+                url="https://github.com/BarrelDev/Tilted"
+                textColor="dark"
+              />
             </div>
             <div className="col-md-4">
-              <PortfolioCard name="React" img={logo} url="" />
+              <PortfolioCard
+                name="My Resume"
+                description="Check out my other experience here!"
+                img={resume_img}
+                url={resume_link}
+                borderColor="warning"
+              />
             </div>
           </div>
         </div>
