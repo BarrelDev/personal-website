@@ -5,7 +5,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const About = () => {
-
   useEffect(() => {
     AOS.init();
   }, []);
@@ -19,31 +18,61 @@ const About = () => {
         <div className="container col-xxl-8 px-4 py-1">
           <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
             <div className="col-lg-6">
-              <p className="fw-light text-white text-body-light text-wrap fs-5" data-aos="fade-up">
-                A high school senior with a passion for computer science.
-                Looking forward to helping people using technology. I am love Game
-                development, programming robots. The areas that I am interested
-                and focusing are AI/ML and Robotics.
+              <p
+                className="fw-light text-white text-body-light text-wrap fs-5"
+                data-aos="fade-up"
+              >
+                A high school senior at Hunterdon Central Regional High School
+                with a passion for{" "}
+                <span className="text-warning fw-bold">
+                  computer science and engineering
+                </span>
+                . Looking forward to{" "}
+                <span className="text-primary-emphasis fw-bold">
+                  helping people using technology
+                </span>
+                . In my free time, I love playing video games and coding small
+                projects.
               </p>
-              <h3 className="display-5 fw-bold text-white text-body-light fs-4 lh-1 mb-3 text-capitalized" data-aos="fade-up">
-                Game Developer & Robot Automation.
+              <h3
+                className="display-5 fw-bold text-white text-body-light fs-4 lh-1 mb-3 text-capitalized"
+                data-aos="fade-up"
+              >
+                Robotics.
               </h3>
-              <p className="fw-light text-white text-body-light text-wrap fs-5" data-aos="fade-up">
-                I am more focused in developing my knowledge in autonomous
-                coding for Robots. The Robots I programmed participated in FRC
-                competitions and reached the district level. I have developed
-                modules for custom features and interactions for the popular
-                voxel-based sandbox game, Minecraft.
+              <p
+                className="fw-light text-white text-body-light text-wrap fs-5"
+                data-aos="fade-up"
+              >
+                I'm a huge fan of robotics, and the robots I've programmed
+                participate in the
+                <span className="fst-italic">
+                  {" "}
+                  FIRST Robotics Competition
+                </span>{" "}
+                and have competed at the world championship as part of my team,&nbsp;
+                <a href="https://www.team3637.com/" className="text-light" target="_blank">
+                  The Daleks
+                </a>
+                . Outside of competing, I work to research new path planning
+                algorithms to make robots more efficient in autonomous terrain
+                navigation.
               </p>
-              <h3 className="display-5 fw-bold text-white text-body-light fs-4 lh-1 mb-3 text-capitalized" data-aos="fade-up">
+              <h3
+                className="display-5 fw-bold text-white text-body-light fs-4 lh-1 mb-3 text-capitalized"
+                data-aos="fade-up"
+              >
                 Mentoring Younger Kids.
               </h3>
-              <p className="fw-light text-white text-body-light text-wrap fs-5" data-aos="fade-up">
-                Teaching others means teaching oneself first. It quite literally
-                forces one to become a master of any skill that he/she want to
-                teach someone else. I strongly believe in sharing knowledge will
-                help one grow professionally. So, I constantly involve my self
-                as Mentoring youngers in the field of robotics, programming.
+              <p
+                className="fw-light text-white text-body-light text-wrap fs-5"
+                data-aos="fade-up"
+              >
+                I'm always looking to help younger kids get introduced to STEM,
+                and I do so via mentorships. My favorite way to get kids working
+                with robots is LEGO EV3 and LEGO SPIKE Prime. I also work to
+                spread awareness of data science via my non-profit, and tutor
+                students K through 9 in mathematics.
               </p>
             </div>
             <div className="col-10 col-sm-8 col-lg-6" data-aos="fade-up">
