@@ -50,8 +50,13 @@ const About = () => {
                   {" "}
                   FIRST Robotics Competition
                 </span>{" "}
-                and have competed at the world championship as part of my team,&nbsp;
-                <a href="https://www.team3637.com/" className="text-light" target="_blank">
+                and have competed at the world championship as part of my
+                team,&nbsp;
+                <a
+                  href="https://www.team3637.com/"
+                  className="text-light"
+                  target="_blank"
+                >
                   The Daleks
                 </a>
                 . Outside of competing, I work to research new path planning
@@ -71,8 +76,16 @@ const About = () => {
                 I'm always looking to help younger kids get introduced to STEM,
                 and I do so via mentorships. My favorite way to get kids working
                 with robots is LEGO EV3 and LEGO SPIKE Prime. I also work to
-                spread awareness of data science via my non-profit, and tutor
-                students K through 9 in mathematics at my part-time job.
+                spread awareness of data science via my{" "}
+                <a
+                  href="https://www.dogoodwithdata.net/"
+                  target="_blank"
+                  className="text-light"
+                >
+                  non-profit
+                </a>
+                , and tutor students K through 9 in mathematics at my part-time
+                job.
               </p>
             </div>
             <div className="col-10 col-sm-8 col-lg-6" data-aos="fade-up">

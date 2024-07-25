@@ -29,12 +29,18 @@ const Hero = () => {
     <>
       <div className="container-fluid bg-dark" id="home">
         <div className="container col-xxl-8 px-4 py-5 ">
-          <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
-            <div className="col-10 col-sm-8 col-lg-6 border border-3 rounded-5 shadow pt-3" data-aos="fade-left">
+          <div
+            className="row flex-lg-row-reverse align-items-center g-5"
+          >
+            <div
+              className="col-10 col-sm-8 col-lg-6 pt-3"
+              style={{marginBottom:"-4.4vh"}}
+              data-aos="fade-left"
+            >
               <img
                 src={logo}
                 className="d-block mx-lg-auto img-fluid"
-                alt="Bootstrap Themes"
+                alt="picture"
                 width="400"
                 loading="lazy"
               />
@@ -53,10 +59,16 @@ const Hero = () => {
                   </li>
                 </ul>
               </div>
-              <h1 className="display-5 fw-bold text-white text-body-light lh-1 mb-3" data-aos="fade-up">
+              <h1
+                className="display-5 fw-bold text-white text-body-light lh-1 mb-3"
+                data-aos="fade-up"
+              >
                 Visvam Rajesh
               </h1>
-              <h1 className="display-5 fw-light text-white fs-2 text-body-light lh-1 mb-3" data-aos="fade-up">
+              <h1
+                className="display-5 fw-light text-white fs-2 text-body-light lh-1 mb-3"
+                data-aos="fade-up"
+              >
                 I'm a <ReactTyped strings={titles} typeSpeed={50} />
               </h1>
             </div>
