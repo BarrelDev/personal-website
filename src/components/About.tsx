@@ -72,7 +72,7 @@ const About = () => {
                 and I do so via mentorships. My favorite way to get kids working
                 with robots is LEGO EV3 and LEGO SPIKE Prime. I also work to
                 spread awareness of data science via my non-profit, and tutor
-                students K through 9 in mathematics.
+                students K through 9 in mathematics at my part-time job.
               </p>
             </div>
             <div className="col-10 col-sm-8 col-lg-6" data-aos="fade-up">
