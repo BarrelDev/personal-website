@@ -9,7 +9,7 @@ interface SkillBarProps {
 }
 
 const SkillBar = ({ name, progress }: SkillBarProps) => {
-  let progressString: string = progress + "%";
+  const progressString: string = progress + "%";
 
   useEffect(() => {
     AOS.init();
