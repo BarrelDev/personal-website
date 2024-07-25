@@ -1,14 +1,18 @@
 import PortfolioCard from "./PortfolioCard";
 
-import logo from "../assets/images/vr-logo.png";
 import hopper from "../assets/images/Hopper.jpeg";
 import gauss from "../assets/images/gauss.jpg";
 import potion_mod from "../assets/images/random-potion-mod.png";
 import cac from "../assets/images/Congressional-App-Challenge-Submission.png";
 import tilted from "../assets/images/tilted.png";
+import food_game from "../assets/images/food-game.png";
+import yt_scraper from "../assets/images/ytscraper.png";
 
 import resume_link from "../assets/pdf/Resume-VisvamRajesh.pdf";
 import resume_img from "../assets/images/resume.jpg";
+
+import research_link from "../assets/pdf/An_Extension_of_Pathfinding_Algorithms_for_Randomly_Determined_Speeds.pdf";
+import research_img from "../assets/images/research_img.png";
 
 import { useEffect } from "react";
 
@@ -37,16 +41,16 @@ const Portfolio = () => {
             </div>
             <div className="col-md-4">
               <PortfolioCard
-                name="ReactGraphDisplay"
-                description=""
-                img={logo}
-                url="https://github.com/BarrelDev/ReactGraphDisplay"
+                name="Pathfinding Research"
+                description="A research paper regarding pathfinding algorithms in 3D voxel space, done with Dr. Wu from NJIT."
+                img={research_img}
+                url={research_link}
               />
             </div>
             <div className="col-md-4">
               <PortfolioCard
                 name="Random Potion Mod"
-                description=""
+                description="A Minecraft mod that give the player random potion effects, using Fabric"
                 img={potion_mod}
                 url="https://github.com/BarrelDev/Random-Potion-Mod"
               />
@@ -73,8 +77,10 @@ const Portfolio = () => {
               <PortfolioCard
                 name="Food Game"
                 description="A WIP game about crafting food for customers, using Raylib."
-                img={logo}
+                img={food_game}
                 url="https://github.com/BarrelDev/FoodGame"
+                titleColor="warning"
+                textColor="warning"
               />
             </div>
           </div>
@@ -83,7 +89,7 @@ const Portfolio = () => {
               <PortfolioCard
                 name="Youtube Scraper"
                 description="A youtube scraper that uses the Youtube Data API to get the latest videos from your subscription feed."
-                img={logo}
+                img={yt_scraper}
                 url="https://github.com/BarrelDev/youtubeScraper"
               />
             </div>

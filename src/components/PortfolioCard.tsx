@@ -68,7 +68,7 @@ const PortfolioCard = ({
         </div>
         <div
           className={
-            "card-img-overlay d-flex flex-column justify-content-end text-" +
+            "card-img-overlay d-flex flex-column fw-bold justify-content-end text-" +
             textColor
           }
         >
