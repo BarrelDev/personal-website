@@ -1,7 +1,7 @@
 import PortfolioCard from "./PortfolioCard";
 
 import hopper from "../assets/images/Hopper.jpeg";
-import gauss from "../assets/images/gauss.jpg";
+import ichbiah from "../assets/images/ichbiah.jpg";
 import potion_mod from "../assets/images/random-potion-mod.png";
 import cac from "../assets/images/Congressional-App-Challenge-Submission.png";
 import tilted from "../assets/images/tilted.png";
@@ -68,10 +68,10 @@ const Portfolio = () => {
                 <div className="row flex-lg-row align-items-center g-5 py-5">
                   <div className="col-md-4">
                     <PortfolioCard
-                      name="Gauss"
-                      description="The codebase behind Team 3637's 2023 robot."
-                      img={gauss}
-                      url="https://github.com/FRC-3637-Daleks/Gauss"
+                      name="Ichbiah"
+                      description="The codebase behind Team 3637's 2025 robot."
+                      img={ichbiah}
+                      url="https://github.com/FRC-3637-Daleks/Ichbiah"
                     />
                   </div>
                   <div className="col-md-4">
@@ -154,9 +154,9 @@ const Portfolio = () => {
                 <div className="row flex-lg-row align-items-center g-5 py-5">
                   <div className="col-md-4">
                     <PortfolioCard
-                      name="Gauss"
-                      description="The codebase behind Team 3637's 2023 robot."
-                      img={gauss}
+                      name="Ichbiah"
+                      description="The codebase behind Team 3637's 2025 robot."
+                      img={ichbiah}
                       url="https://github.com/FRC-3637-Daleks/Gauss"
                     />
                   </div>
@@ -240,10 +240,10 @@ const Portfolio = () => {
                 <div className="row flex-lg-row align-items-center g-5 py-5">
                   <div className="col-md-4">
                     <PortfolioCard
-                      name="Gauss"
-                      description="The codebase behind Team 3637's 2023 robot."
-                      img={gauss}
-                      url="https://github.com/FRC-3637-Daleks/Gauss"
+                      name="Ichbiah"
+                      description="The codebase behind Team 3637's 2025 robot."
+                      img={ichbiah}
+                      url="https://github.com/FRC-3637-Daleks/ichbiah"
                     />
                   </div>
                   <div className="col-md-4">

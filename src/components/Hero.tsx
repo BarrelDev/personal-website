@@ -8,17 +8,17 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const titles = [
-  "Developer",
-  "Robotics Programmer",
-  "Programming Captain",
-  "Game Developer",
-  "Student",
-  "Researcher",
-  "Innovator",
-  "Engineer",
-  "Teacher",
-  "Software Engineer",
-  "Educator",
+  "a Developer",
+  "a Robotics Programmer",
+  "a Programming Captain",
+  "a Game Developer",
+  "a Student",
+  "a Researcher",
+  "an Innovator",
+  "an Engineer",
+  "a Teacher",
+  "a Software Engineer",
+  "an Educator",
 ];
 
 const Hero = () => {
@@ -29,12 +29,10 @@ const Hero = () => {
     <>
       <div className="container-fluid bg-dark" id="home">
         <div className="container col-xxl-8 px-4 py-5 ">
-          <div
-            className="row flex-lg-row-reverse align-items-center g-5"
-          >
+          <div className="row flex-lg-row-reverse align-items-center g-5">
             <div
               className="col-10 col-sm-8 col-lg-6 pt-3"
-              style={{marginBottom:"-4.4vh"}}
+              style={{ marginBottom: "-4.4vh" }}
               data-aos="fade-left"
             >
               <img
@@ -69,7 +67,7 @@ const Hero = () => {
                 className="display-5 fw-light text-white fs-2 text-body-light lh-1 mb-3"
                 data-aos="fade-up"
               >
-                I'm a <ReactTyped strings={titles} typeSpeed={50} />
+                I'm <ReactTyped strings={titles} typeSpeed={50} />
               </h1>
             </div>
           </div>
