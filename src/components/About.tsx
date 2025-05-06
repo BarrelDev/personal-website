@@ -1,13 +1,41 @@
 import logo from "../assets/images/profile-img.jpg";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 const About = () => {
+  const main = useRef(null);
+
   useEffect(() => {
     AOS.init();
   }, []);
+
+  useGSAP(
+    () => {
+      const boxes = gsap.utils.toArray(".box");
+      boxes.forEach((box) => {
+        // @ts-ignore
+        gsap.to(box, {
+          x: 150,
+          scrollTrigger: {
+            trigger: box,
+            start: "bottom bottom",
+            end: "top 20%",
+            scrub: true,
+            // markers: true,
+          },
+        });
+      });
+    },
+    { scope: main }
+  );
 
   return (
     <>
