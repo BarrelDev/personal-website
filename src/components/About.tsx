@@ -22,8 +22,7 @@ const About = () => {
                 className="fw-light text-white text-body-light text-wrap fs-5"
                 data-aos="fade-up"
               >
-                A high school senior at Hunterdon Central Regional High School
-                with a passion for{" "}
+                A first-year computer science student at Carnegie Mellon University with a passion for{" "}
                 <span className="text-warning fw-bold">
                   computer science and engineering
                 </span>
