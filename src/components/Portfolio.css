@@ -1,0 +1,35 @@
+
+.portfolio-swiper {
+  /*overflow: visible !important;*/
+  position: relative;
+  padding-inline: 2rem; /* keeps arrows inside margins */
+}
+
+.swiper-slide {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+  transition: none !important;
+}
+
+/* Make arrows thicker, bigger, and bright blue */
+.portfolio-swiper .swiper-button-prev::after,
+.portfolio-swiper .swiper-button-next::after {
+  font-size: 2rem;        /* makes the arrow bigger */
+  font-weight: bold;       /* makes it visually thicker */
+  color: #1e90ff;          /* bright blue */
+}
+
+/* Optional: slightly enlarge the clickable area */
+.portfolio-swiper .swiper-button-prev,
+.portfolio-swiper .swiper-button-next {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Optional: add hover glow effect */
+.portfolio-swiper .swiper-button-prev:hover::after,
+.portfolio-swiper .swiper-button-next:hover::after {
+  color: #00bfff;          /* lighter blue on hover */
+  text-shadow: 0 0 8px #00bfff;
+}
