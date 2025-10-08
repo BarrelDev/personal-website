@@ -2,15 +2,8 @@ import SkillBar from "./SkillBar";
 import SkillTabs from "./SkillTabs.tsx";
 import ResumeSection from "./ResumeSection.tsx";
 import { useEffect, useState } from "react";
-import resume from "../data/resume.json";
-import publications from "../data/publications.json";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-const resumeData = {
-  ...resume,
-  publications
-};
 
 const Skills = () => {
   useEffect(() => {
@@ -44,7 +37,7 @@ const Skills = () => {
 
           <div className="col-lg-6">
             <h3>Resume</h3>
-            <ResumeSection resumeData={resumeData} />
+            <ResumeSection />
           </div>
         </div>
       </div>
