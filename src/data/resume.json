@@ -1,0 +1,88 @@
+{
+  "skills": [
+    {
+      "category": "Programming",
+      "items": [
+        "Python",
+        "C",
+        "C++",
+        "Java",
+        "JavaScript",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "Rust",
+        "C#"
+      ]
+    },
+    {
+      "category": "Technologies",
+      "items": [
+        "React",
+        "Bootstrap",
+        "Node.js",
+        "Next.js",
+        "MongoDB",
+        "Raylib",
+        "Numpy",
+        "Scikit-Learn",
+        "Jupyter",
+        "ROS 2",
+        "Linux"
+      ]
+    },
+    {
+      "category": "Languages",
+      "items": [
+        "English",
+        "Tamil",
+        "French"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Carnegie Mellon University",
+      "period": "2025 - 2028",
+      "gpa": "4.0/4.0"
+    },
+    {
+      "institution": "Hunterdon Central Regional High School",
+      "period": "2021 - 2025",
+      "gpa": "4.43/5.00"
+    }
+  ],
+  "experience": [
+    {
+      "company": "ScottyLabs",
+      "period": "Sept 2025 - Present",
+      "role": "Software Engineer",
+      "description": "Working on https://cmucourses.com CMU Courses website backend. Developing student schedule creation heuristic. Using Rust and Typescript. Over 5k users/wk on the site."
+    },
+    {
+      "company": "Carnegie Mellon Racing",
+      "period": "Sept 2026 - Present",
+      "role": "Driverless Path-Planning Developer",
+      "description": "Building SLAM and Trajectory algorithms for an all-electric race-car using C++, Python, and ROS 2."
+    },
+    {
+      "company": "Visra Solutions",
+      "period": "June 2024 - Aug 2024",
+      "role": "Software Developer",
+      "description": "Worked on modular data displays in React. Used SciKit Learn, Numpy, Pandas, MatplotLib to train models and visualize data. Used AWS instances to run tests and programs."
+    },
+    {
+      "company": "The Daleks, FIRST Robotics Competition Team 3637",
+      "period": "Sept 2021 - Jun 2025",
+      "role": "President",
+      "description": [
+        "Just under 6 weeks to design, build, and program a robot along with my peers to compete.",
+        "Won Montgomery District Event; Qualified for world championships in Houston, Texas; Received the FIRST Impact Award, the most prestigious award available in competition.",
+        "Programmed in C++ and Python; Worked on perception and path-planning, LiDAR using ROS 2."
+      ]
+    }
+  ],
+  "publications": [
+    "*"
+  ]
+}

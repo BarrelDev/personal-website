@@ -1,0 +1,231 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.95]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{6pt}{6pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+
+% job listing environments
+\newenvironment{jobshort}[3]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.5pt]
+    \end{tabularx}
+    #3 \\
+    }
+    {
+    }
+
+\newenvironment{joblong}[3]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.5pt]
+    \end{tabularx}
+    #3 \\[3.5pt]
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}    
+    }
+
+
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Visvam Rajesh} \\[7.5pt]
+\href{https://github.com/BarrelDev}{\raisebox{-0.05\height}\faGithub\ BarrelDev} \ $|$ \ 
+\href{https://linkedin.com/in/Visvam}{\raisebox{-0.05\height}\faLinkedin\ visvam} \ $|$ \ 
+\href{https://visvamrajesh.com}{\raisebox{-0.05\height}\faGlobe \ visvamrajesh.com} \ $|$ \ 
+\href{mailto:visvamrajesh@outlook.com}{\raisebox{-0.05\height}\faEnvelope \ visvamrajesh@outlook.com} \ $|$ \ 
+\href{tel:+19083813665}{\raisebox{-0.05\height}\faMobile \ +1(908)381-3665} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+% \section{Summary}
+% A collaborative software engineer with a passion for robotics. Looking for Summer 2026 Internships.
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{Programming} &  \normalsize{Python, C, C++, Java, JavaScript, TypeScript, HTML, CSS, Rust, C\#}\\
+\textbf{Technologies} &  \normalsize{React, Bootstrap, Node.js, Next.js, MongoDB, Raylib, Numpy, Scikit-Learn, Jupyter, ROS 2, Linux}\\
+\textbf{Languages}  &  \normalsize{English, Tamil, French}\\  
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2025 - 2028 & \textbf{Carnegie Mellon University} \hfill (GPA: 4.0/4.0) \\ 
+& \hfill BS Computer Science \& Robotics \\
+& \textbf{Selected Coursework:} Introduction to Computer Systems, Great Practical Ideas for Computer Scientists, Principles of Imperative Computation \\
+
+2021 - 2025 & Hunterdon Central Regional High School \hfill  (WGPA: 4.43/5.00) \\
+&\textbf{Honors:} Honor Roll, National Merit Scholar \hfill High School Diploma \\
+&\textbf{Selected Coursework:} AP Computer Science, AP Calculus ABC, Honors Linear Algebra, AP Physics C, Honors Discrete Math
+\end{tabularx}
+
+%Experience
+\section{Work Experience}
+
+\begin{jobshort}{ScottyLabs}{Sept 2025 - Present}{\textbf{Software Engineer}}
+Working on \href{https://cmucourses.com}{CMU Courses} website backend. Developing student schedule creation heuristic. Using Rust and Typescript. Over 5k users/wk on the site.
+\end{jobshort}
+
+\begin{jobshort}{Carnegie Mellon Racing}{Sept 2026 - Present}{\textbf{Driverless Path-Planning Developer}}
+Building SLAM and Trajectory algorithms for an all-electric race-car using C++, Python, and ROS 2.
+\end{jobshort}
+
+\begin{jobshort}{Visra Solutions}{June 2024 - Aug 2024}{\textbf{Software Developer}}
+Worked on modular data displays in React. Used SciKit Learn, Numpy, Pandas, MatplotLib to train models and visualize data. Used AWS instances to run tests and programs.
+\end{jobshort}
+
+
+\begin{joblong}{The Daleks, FIRST Robotics Competition Team 3637}{Sept 2021 - Jun 2025}{\textbf{President} (June 2024 – June 2025), \textbf{Programming Captain} (May 2023 - June 2024)}
+\item Just under 6 weeks to design, build, and program a robot along with my peers to compete.
+\item Won Montgomery District Event; Qualified for world championships in Houston, Texas; Received the FIRST Impact Award, the most prestigious award available in competition.
+\item Programmed in C++ and Python; Worked on perception and path-planning, LiDAR using ROS 2.
+\end{joblong}
+  
+%Projects
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Password Manager} (\href{https://github.com/BarrelDev/password-manager}{Link}) & July 2025\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Created encrypted password database using Fernet encryption keys. Used Textual to create a TUI for an interactive user experience. Written in Python.}  \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Publications}
+\begin{refsection}[citations.bib]
+\nocite{*}
+\printbibliography[heading=none]
+\end{refsection}
+
+
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
+\end{document}
