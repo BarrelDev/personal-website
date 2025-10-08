@@ -82,7 +82,7 @@ const Portfolio = () => {
             <div
               className="portfolio-prev swiper-button-prev"
               style={{
-                left: "-58px",
+                left: "-50px",
                 top: "50%",
                 transform: "translateY(-50%)",
                 color: "#1e90ff",
@@ -92,7 +92,7 @@ const Portfolio = () => {
             <div
               className="portfolio-next swiper-button-next"
               style={{
-                right: "-58px",
+                right: "-50px",
                 top: "50%",
                 transform: "translateY(-50%)",
                 color: "#1e90ff",
