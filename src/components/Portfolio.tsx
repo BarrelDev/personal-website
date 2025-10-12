@@ -70,7 +70,7 @@ const Portfolio = () => {
             grid={{ rows: 2, fill: "row" }}
             breakpoints={{
               992: { slidesPerView: 3, slidesPerGroup: 6 },
-              768: { slidesPerView: 2, slidesPerGroup: 4 },
+              768: { slidesPerView: 2, slidesPerGroup: 2 },
               0: { slidesPerView: 1, slidesPerGroup: 1 },
             }}
             className="portfolio-swiper"

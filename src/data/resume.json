@@ -40,24 +40,12 @@
       ]
     }
   ],
-  "education": [
-    {
-      "institution": "Carnegie Mellon University",
-      "period": "2025 - 2028",
-      "gpa": "4.0/4.0"
-    },
-    {
-      "institution": "Hunterdon Central Regional High School",
-      "period": "2021 - 2025",
-      "gpa": "4.43/5.00"
-    }
-  ],
   "experience": [
     {
       "company": "ScottyLabs",
       "period": "Sept 2025 - Present",
       "role": "Software Engineer",
-      "description": "Working on https://cmucourses.com CMU Courses website backend. Developing student schedule creation heuristic. Using Rust and Typescript. Over 5k users/wk on the site."
+      "description": "Working on https://cmucourses.com website backend. Developing student schedule creation heuristic. Using Rust and Typescript. Over 5k users/wk on the site."
     },
     {
       "company": "Carnegie Mellon Racing",
@@ -80,6 +68,18 @@
         "Won Montgomery District Event; Qualified for world championships in Houston, Texas; Received the FIRST Impact Award, the most prestigious award available in competition.",
         "Programmed in C++ and Python; Worked on perception and path-planning, LiDAR using ROS 2."
       ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Carnegie Mellon University",
+      "period": "2025 - 2028",
+      "gpa": "4.0/4.0"
+    },
+    {
+      "institution": "Hunterdon Central Regional High School",
+      "period": "2021 - 2025",
+      "gpa": "4.43/5.00"
     }
   ],
   "publications": [

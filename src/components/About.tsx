@@ -22,17 +22,20 @@ const About = () => {
                 className="fw-light text-white text-body-light text-wrap fs-5"
                 data-aos="fade-up"
               >
-                A first-year computer science student at Carnegie Mellon University with a passion for{" "}
+                I'm a{" "}
                 <span className="text-warning fw-bold">
-                  computer science and engineering
-                </span>
-                . Looking forward to{" "}
+                  Computer Science & Robotics
+                </span>{" "}
+                student at{" "}
+                <span className="fw-semibold">Carnegie Mellon University</span>, passionate
+                about{" "}
                 <span className="text-primary-emphasis fw-bold">
-                  helping people using technology
+                  building technology that helps people and solves real-world problems
                 </span>
-                . In my free time, I love playing video games and coding small
-                projects.
+                . I love working across disciplines to design intelligent systems—from
+                robotics algorithms to web infrastructure and open-source tools.
               </p>
+
               <h3
                 className="display-5 fw-bold text-white text-body-light fs-4 lh-1 mb-3 text-capitalized"
                 data-aos="fade-up"
@@ -43,48 +46,50 @@ const About = () => {
                 className="fw-light text-white text-body-light text-wrap fs-5"
                 data-aos="fade-up"
               >
-                I'm a huge fan of robotics, and the robots I've programmed
-                participate in the
-                <span className="fst-italic">
-                  {" "}
-                  FIRST Robotics Competition
-                </span>{" "}
-                and have competed at the world championship as part of my
-                team,&nbsp;
-                <a
-                  href="https://www.team3637.com/"
-                  className="text-light"
-                  target="_blank"
-                >
-                  The Daleks
+                At{" "}
+                <a href="https://carnegiemellonracing.org/" className="text-light" target="_blank">
+                  Carnegie Mellon Racing
                 </a>
-                . Outside of competing, I work to research new path planning
-                algorithms to make robots more efficient in autonomous terrain
-                navigation.
+                , I work on the{" "}
+                <span className="fw-semibold">driverless path-planning team</span>,
+                developing SLAM and trajectory algorithms for an autonomous electric race car
+                using <span className="fst-italic">C++, Python, and ROS 2</span>.  
+                I also served as the{" "}
+                <span className="fw-semibold">president of FRC Team 3637, The Daleks</span>,
+                where I led my team to win{" "}
+                <span className="fw-semibold">District Events</span> and the{" "}
+                <span className="fst-italic">FIRST Impact Award</span>, earning a spot at the{" "}
+                <span className="fw-semibold">World Championship</span>.  
+                Over the summer, I led a{" "}
+                <span className="fw-semibold">holonomic drivetrain project at Nokia Bell Labs</span>,
+                collaborating across disciplines to design and test new motion control systems.
+                I also co-authored a research paper with Dr. Wu of NJIT, extending
+                pathfinding algorithms for 3D terrain navigation.
               </p>
+
               <h3
                 className="display-5 fw-bold text-white text-body-light fs-4 lh-1 mb-3 text-capitalized"
                 data-aos="fade-up"
               >
-                Mentoring Younger Kids.
+                Software & Collaboration.
               </h3>
               <p
                 className="fw-light text-white text-body-light text-wrap fs-5"
                 data-aos="fade-up"
               >
-                I'm always looking to help younger kids get introduced to STEM,
-                and I do so via mentorships. My favorite way to get kids working
-                with robots is LEGO EV3 and LEGO SPIKE Prime. I also work to
-                spread awareness of data science via my{" "}
-                <a
-                  href="https://www.dogoodwithdata.net/"
-                  target="_blank"
-                  className="text-light"
-                >
-                  non-profit
+                Beyond robotics, I’m part of{" "}
+                <a href="https://scottylabs.org/" className="text-light" target="_blank">
+                  ScottyLabs
                 </a>
-                , and tutor students K through 9 in mathematics at my part-time
-                job.
+                , a student-run organization building platforms used by thousands of CMU
+                students. I contribute to the{" "}
+                <a href="https://cmucourses.com/" className="text-light" target="_blank">
+                  CMU Courses
+                </a>{" "}
+                website backend—developing scheduling heuristics and data pipelines in
+                <span className="fw-semibold"> Rust and TypeScript</span>.  
+                I enjoy working on software that’s both technically challenging and directly
+                impacts the student community.
               </p>
             </div>
             <div className="col-10 col-sm-8 col-lg-6" data-aos="fade-up">
