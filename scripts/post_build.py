@@ -1,9 +1,15 @@
 import os
 import re
+import subprocess
+import glob
 
 # Path to your build output folder (adjust if needed)
-BUILD_DIR = "dist"  # or "build" for CRA
-FILES_TO_PATCH = ["index.html", "assets/index.js"]
+BUILD_DIR = "../dist/"  # or "build" for CRA
+js_files = glob.glob(os.path.join(BUILD_DIR, "assets/index-*.js"))
+if not js_files:
+    print("No JS files found!")
+    exit()
+FILES_TO_PATCH = ["index.html", js_files[0]]
 
 # Regex to match /assets/... but not // (to avoid messing up URLs)
 ASSET_REGEX = re.compile(r'(?<!:)\/assets/')
@@ -30,6 +36,7 @@ def main():
             if filename.endswith(".js") or filename.endswith(".html"):
                 path = os.path.join(root, filename)
                 patch_file(path)
+    subprocess.run(["mv","../dist/favicon.ico", "../dist/assets/."]);
 
     print("🎉 Path fix complete.")
 

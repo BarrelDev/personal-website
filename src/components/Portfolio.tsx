@@ -1,7 +1,6 @@
 import PortfolioCard from "./PortfolioCard";
 import "./Portfolio.css"
 
-import logo from "../assets/images/vr-logo.png";
 import { projects } from "../data/projects.tsx";
 
 import { useState, useEffect } from "react";
@@ -82,7 +81,7 @@ const Portfolio = () => {
                   data-aos="fade-up"
                   data-aos-delay={(i % 6) * 100} // staggered 0,100,200...
                   data-aos-duration="600">
-                <PortfolioCard {...p} /></div>
+                <PortfolioCard {...p as any} /></div>
               </SwiperSlide>
             ))}
 

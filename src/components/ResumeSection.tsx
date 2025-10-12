@@ -1,8 +1,9 @@
 import resume_link from "../assets/pdf/Resume-VisvamRajesh.pdf";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperClass } from "swiper";
 import { EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -10,28 +11,63 @@ import "swiper/css/effect-fade";
 import resume from "../data/resume.json";
 import publications from "../data/publications.json";
 
-const resumeData = {
+type SkillCategory = {
+  category: string;
+  items: string[];
+};
+
+type EducationItem = {
+  institution: string;
+  period: string;
+  degree?: string;
+  gpa?: string;
+};
+
+type ExperienceItem = {
+  company: string;
+  period: string;
+  role: string;
+  description: string | string[];
+};
+
+type Publication = {
+  title?: string;
+  author?: string;
+  journal?: string;
+  year?: string;
+  link?: string;
+};
+
+type ResumeData = {
+  skills: SkillCategory[];
+  education?: EducationItem[];
+  experience?: ExperienceItem[];
+  publications?: Publication[] | string[];
+};
+
+const resumeData: ResumeData = {
   ...resume,
-  publications
+  publications,
 };
 
 const ResumeSection = () => {
-  const [activeTab, setActiveTab] = useState("skills");
-  const [swiperInstance, setSwiperInstance] = useState(null);
-  const tabs = Object.keys(resumeData);
+  const [activeTab, setActiveTab] = useState<string>("skills");
+  const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(null);
+  const tabs = Object.keys(resumeData) as (keyof ResumeData)[];
 
   useEffect(() => {
     AOS.init({ duration: 600, once: true });
   }, []);
 
-  // Sync Swiper with activeTab
+  // Sync Swiper with activeTab safely
   useEffect(() => {
-    if (swiperInstance) {
-      const tabIndex = tabs.indexOf(activeTab);
+    if (!swiperInstance) return;
+    const tabIndex = tabs.indexOf(activeTab as keyof ResumeData);
+    if (tabIndex >= 0 && typeof swiperInstance.slideTo === "function") {
       swiperInstance.slideTo(tabIndex);
       setTimeout(() => AOS.refresh(), 300);
     }
-  }, [activeTab, swiperInstance]);
+  }, [activeTab, swiperInstance, tabs]);
 
   return (
     <section id="resume" className="container-fluid bg-success-subtle py-5">
@@ -59,13 +95,13 @@ const ResumeSection = () => {
         >
           {tabs.map((tab) => (
             <button
-              key={tab}
+              key={String(tab)}
               className={`btn ${
                 activeTab === tab ? "btn-primary" : "btn-outline-primary"
               }`}
-              onClick={() => setActiveTab(tab)}
+              onClick={() => setActiveTab(String(tab))}
             >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              {String(tab).charAt(0).toUpperCase() + String(tab).slice(1)}
             </button>
           ))}
         </div>
@@ -73,8 +109,8 @@ const ResumeSection = () => {
         {/* Swiper Section */}
         <Swiper
           modules={[EffectFade]}
-          effect="slide" // can switch to "fade" if you prefer
-          onSwiper={setSwiperInstance}
+          effect="slide" // "fade" is also an option
+          onSwiper={(s) => setSwiperInstance(s)}
           allowTouchMove={false}
           speed={500}
           className="resume-swiper"
@@ -82,25 +118,25 @@ const ResumeSection = () => {
         >
           <SwiperSlide>
             <div className="p-3" data-aos="fade-up">
-              <SkillsSection items={resumeData.skills} />
+              <SkillsSection items={resumeData.skills ?? []} />
             </div>
           </SwiperSlide>
 
           <SwiperSlide>
             <div className="p-3" data-aos="fade-up">
-              <EducationSection items={resumeData.education} />
+              <ExperienceSection items={resumeData.experience ?? []} />
             </div>
           </SwiperSlide>
 
           <SwiperSlide>
             <div className="p-3" data-aos="fade-up">
-              <ExperienceSection items={resumeData.experience} />
+              <EducationSection items={resumeData.education ?? []} />
             </div>
           </SwiperSlide>
 
           <SwiperSlide>
             <div className="p-3" data-aos="fade-up">
-              <PublicationsSection items={resumeData.publications} />
+              <PublicationsSection items={resumeData.publications ?? []} />
             </div>
           </SwiperSlide>
         </Swiper>
@@ -109,14 +145,22 @@ const ResumeSection = () => {
   );
 };
 
-const SkillsSection = ({ items }) => (
+const SkillsSection: React.FC<{ items: SkillCategory[] }> = ({ items }) => (
   <div>
     {items.map((category, idx) => (
       <div key={idx} className="mb-4">
         <h5 className="fw-bold">{category.category}</h5>
         <div className="d-flex flex-wrap gap-2">
           {category.items.map((skill, i) => (
-            <span key={i} className="badge bg-success text-light p-2">
+            <span
+              key={i}
+              className="badge text-light p-2"
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.15)",
+                border: "1px solid rgba(255, 255, 255, 0.25)",
+                backdropFilter: "blur(4px)",
+              }}
+            >
               {skill}
             </span>
           ))}
@@ -126,7 +170,7 @@ const SkillsSection = ({ items }) => (
   </div>
 );
 
-const ExperienceSection = ({ items }) => (
+const ExperienceSection: React.FC<{ items: ExperienceItem[] }> = ({ items }) => (
   <div className="row">
     {items.map((exp, i) => (
       <div key={i} className="col-md-6 mb-4">
@@ -149,7 +193,7 @@ const ExperienceSection = ({ items }) => (
   </div>
 );
 
-const EducationSection = ({ items }) => (
+const EducationSection: React.FC<{ items: EducationItem[] }> = ({ items }) => (
   <div className="row">
     {items.map((edu, i) => (
       <div key={i} className="col-md-6 mb-4">
@@ -164,132 +208,39 @@ const EducationSection = ({ items }) => (
   </div>
 );
 
-const PublicationsSection = ({ items }) => (
+const PublicationsSection: React.FC<{ items: Publication[] | string[] }> = ({ items }) => (
   <div className="row">
-    {items.map((pub, i) => (
-      <div key={i} className="col-md-6 mb-4">
-        <div className="p-3 rounded-3 shadow-sm bg-success h-100">
-          <h5 className="fw-bold mb-1">{pub.title}</h5>
-          {pub.author && <div><em>{pub.author}</em></div>}
-          {pub.journal && <div>{pub.journal}</div>}
-          {pub.year && <small className="text-white">{pub.year}</small>}
-          {pub.link && (
-            <div className="mt-2">
-              <a href={pub.link} target="_blank" rel="noreferrer">
-                View Publication
-              </a>
+    {items.map((pub, i) => {
+      // publications.json may contain strings or objects, handle both
+      if (typeof pub === "string") {
+        return (
+          <div key={i} className="col-md-6 mb-4">
+            <div className="p-3 rounded-3 shadow-sm bg-success h-100">
+              <div>{pub}</div>
             </div>
-          )}
+          </div>
+        );
+      }
+      return (
+        <div key={i} className="col-md-6 mb-4">
+          <div className="p-3 rounded-3 shadow-sm bg-success h-100">
+            <h5 className="fw-bold mb-1">{pub.title}</h5>
+            {pub.author && <div><em>{pub.author}</em></div>}
+            {pub.journal && <div>{pub.journal}</div>}
+            {pub.year && <small className="text-white">{pub.year}</small>}
+            {pub.link && (
+              <div className="mt-2">
+                <a href={pub.link} target="_blank" rel="noreferrer">
+                  View Publication
+                </a>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    ))}
+      );
+    })}
   </div>
 );
-//const ResumeSection = ({ resumeData }) => {
-//  return (
-//    <div>
-//      {/* Download Resume Button */}
-//      <div className="mb-4 text-center">
-//        <a
-//          href={resume_link}
-//          target="_blank"
-//          rel="noopener noreferrer"
-//          className="btn btn-primary"
-//        >
-//          Download Resume
-//        </a>
-//      </div>
-
-//      {/* Accordion for Resume Sections */}
-//      <div className="accordion" id="resumeAccordion">
-//        {Object.entries(resumeData).map(([section, items], idx) => (
-//          <div key={idx} className="accordion-item">
-//            <h2 className="accordion-header" id={`heading-${idx}`}>
-//              <button
-//                className="accordion-button collapsed"
-//                type="button"
-//                data-bs-toggle="collapse"
-//                data-bs-target={`#collapse-${idx}`}
-//                aria-expanded="false"
-//                aria-controls={`collapse-${idx}`}
-//              >
-//                {section.charAt(0).toUpperCase() + section.slice(1)}
-//              </button>
-//            </h2>
-
-//            <div
-//              id={`collapse-${idx}`}
-//              className="accordion-collapse collapse"
-//              aria-labelledby={`heading-${idx}`}
-//              data-bs-parent="#resumeAccordion"
-//            >
-//              <div className="accordion-body">
-//                <ul className="list-group list-group-flush">
-//                  {items.map((item, i) => {
-//                    // Adaptive rendering based on your JSON structure
-//                    if (section === "skills") {
-//                      return (
-//                        <li key={i} className="list-group-item">
-//                          <strong>{item.category}:</strong> {item.items.join(", ")}
-//                        </li>
-//                      );
-//                    }
-
-//                    if (section === "education") {
-//                      return (
-//                        <li key={i} className="list-group-item">
-//                          <h6>{item.institution}</h6>
-//                          <small className="text-muted">{item.period}</small>
-//                          {item.gpa && <div>GPA: {item.gpa}</div>}
-//                        </li>
-//                      );
-//                    }
-
-//                    if (section === "experience") {
-//                      return (
-//                        <li key={i} className="list-group-item">
-//                          <h6>{item.role}</h6>
-//                          <small className="text-muted">{item.period}</small>
-//                          <div><strong>{item.company}</strong></div>
-//                          {Array.isArray(item.description) ? (
-//                            <ul>
-//                              {item.description.map((d, j) => (
-//                                <li key={j}>{d}</li>
-//                              ))}
-//                            </ul>
-//                          ) : (
-//                            <div>{item.description}</div>
-//                          )}
-//                        </li>
-//                      );
-//                    }
-
-//                    if (section === "publications") {
-//                      return (
-//                        <li key={i} className="list-group-item">
-//                          {item.title && <h6>{item.title}</h6>}
-//                          {item.author && <div><em>{item.author}</em></div>}
-//                          {item.year && <small className="text-muted">{item.year}</small>}
-//                          {item.journal && <div>{item.journal}</div>}
-//                          {item.link && (
-//                            <a href={item.link} target="_blank" rel="noreferrer">
-//                              View
-//                            </a>
-//                          )}
-//                        </li>
-//                      );
-//                    }
-
-//                    return null;
-//                  })}
-//                </ul>
-//              </div>
-//            </div>
-//          </div>
-//        ))}
-//      </div>
-//    </div>
-//  );
-//};
 
 export default ResumeSection;
+

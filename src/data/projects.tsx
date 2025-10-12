@@ -17,11 +17,16 @@ import cac from "../assets/images/Congressional-App-Challenge-Submission.png";
 import tilted from "../assets/images/tilted.png";
 import food_game from "../assets/images/food-game.png";
 import yt_scraper from "../assets/images/ytscraper.png";
-
-import resume_link from "../assets/pdf/Resume-VisvamRajesh.pdf";
-import resume_img from "../assets/images/resume.jpg";
+import passwd_manager from "../assets/images/passwordmanager.png";
 
 export const projects = [
+  {
+    name: "Password Manager",
+    description: "A simple, local-first password manager written in Python.",
+    img: passwd_manager,
+    url: "https://github.com/BarrelDev/password-manager",
+    tags: ["Utilities"],
+  },
   {
     name: "Hopper",
     description: "The codebase behind Team 3637's 2024 world championship robot, Dalek Floyd.",
@@ -80,13 +85,5 @@ export const projects = [
     url: "https://github.com/BarrelDev/Tilted",
     textColor: "dark",
     tags: ["Games"],
-  },
-  {
-    name: "My Resume",
-    description: "Check out my other experience here!",
-    img: resume_img,
-    url: resume_link,
-    borderColor: "warning",
-    tags: ["Utilities"],
   },
 ];
